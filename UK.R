@@ -2,12 +2,18 @@
 # UK model: load data and analyse scenarios
 # - - - - - - - - - - - - - - - - - - - - - - - 
 
+## sje edits here
+options(warn=2, error=recover)
+sje_debug = TRUE
+###
+
 library(rlang)
 library(stringr)
 
 # Set path
 # Set this path to the base directory of the repository.
-covid_uk_path = "~/Dropbox/COVID-UK"
+##covid_uk_path = "~/Dropbox/COVID-UK"
+covid_uk_path = "."
 
 # covidm options
 cm_path = paste0(covid_uk_path, "/covidm/");
@@ -197,6 +203,10 @@ add_dynamics = function(run, dynamics, iv)
 # MAIN CODE #
 #############
 
+if (sje_debug) {
+  analysis = 1
+  n_runs = 50
+} else {
 argv = commandArgs(trailingOnly = T);
 argc = length(argv);
 if (argc != 2) {
@@ -204,6 +214,7 @@ if (argc != 2) {
 }
 analysis = as.numeric(argv[argc-1]);
 n_runs = as.numeric(argv[argc]);
+}
 
 if (analysis == 1) {
   # Define school terms, base versus intervention (both same here)
@@ -393,6 +404,7 @@ for (r in 1:n_runs) {
   
   # 4b. Set school terms
   iv = cm_iv_build(params)
+  browser()
   cm_iv_set(iv, school_close_b, school_reopen_b, contact = c(1, 1, 0, 1,  1, 1, 0, 1,  1), trace_school = 2);
   params = cm_iv_apply(params, iv);
   
