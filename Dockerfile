@@ -9,3 +9,7 @@ RUN git clone https://github.com/sje30/covid-uk
 
 WORKDIR covid-uk
 RUN Rscript install.R
+
+## would like to then do on a large machine...
+## RUN parallel --jobs 6 < run-jobs.sh
+
