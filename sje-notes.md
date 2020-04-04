@@ -26,3 +26,18 @@ cm_path = paste0(covid_uk_path, "/covidm/");
 if(grepl(Sys.info()["user"], pattern = "^adamkuchars(ki)?$")){cm_path = "~/Documents/GitHub/covidm/"}
 ```
 
+## Suggestion: use file.path() not paste0()
+
+`file.path()` is the recommended way by R to construct a portable path
+name, rather than `paste0()` (which is admittedly what I also do).
+So, e.g. this would make changes like:
+
+```
+source(paste0(cm_path, "/R/covidm.R"))
+```
+
+to
+```
+source(file.path(cm_path, "R", "covidm.R"))
+```
+
