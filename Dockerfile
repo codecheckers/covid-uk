@@ -2,11 +2,10 @@
 FROM rocker/verse
 MAINTAINER Stephen Eglen <sje30@cam.ac.uk>
 
-RUN set -ex; \
-  apt-get -y update; \
-  apt-get -y install  libnlopt-dev libgsl-dev parallel git
+RUN apt-get -y update
+RUN apt-get -y install  libnlopt-dev libgsl-dev parallel git
 
-#RUN apt-get update && apt-get upgrade && apt-get install git
+RUN git clone https://github.com/sje30/covid-uk
 
-
-# RUN Rscript -e "source('install.R')"
+WORKDIR covid-uk
+RUN Rscript install.R
