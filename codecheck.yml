@@ -15,17 +15,23 @@ paper:
 
 manifest:
   - file: fig-12week.pdf
-    comment: Figure 2 of manuscript -- impact of interventions lasting 12 weeks.
+    comment: manuscript Figure 2 -- impact of interventions lasting 12 weeks.
   - file: table-12week.csv
-    comment: Table 4 of manuscript -- project impact of 12-week interventions.
+    comment: manuscript Table 4 -- project impact of 12-week interventions.
   - file: fig-triggers.pdf
-    comment: Figure 3 of manuscript -- local vs national triggering.
+    comment: manuscript Figure 3 -- local vs national triggering.
   - file: fig-misc.pdf
-    comment: Figure 4 of manuscript -- reducing leisure events/impact of increased childcare.
+    comment: manuscript Figure 4 -- reducing leisure events/impact of increased childcare.
   - file: fig-lockdown.pdf
-    comment: Figure 5 of manuscript -- intensive control measures.
+    comment: manuscript Figure 5 -- intensive control measures.
   - file: table-lockdown.csv
-    comment: Table 5 of manuscript --  intensive control measures.
+    comment: manuscipt Table 5 --  intensive control measures.
+  - file: table-triggers.csv
+    comment: manuscript Table S3 --  impact of control measures with local vs national triggering.
+  - file: table-sports.csv
+    comment: manuscript Table S4 --  impact of leisure control measures.
+  - file: table-grandparents.csv
+    comment: manuscript Table S5 --  impact of school closures and care by elders.
 
 codechecker:
   - name: Stephen J. Eglen
