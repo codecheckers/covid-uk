@@ -42,7 +42,7 @@ deposit_draft <- zenodo$depositRecord(deposit_draft)
 ## pass insert codechecker-token
 ## this can then be retrieved using:
 ## pass show codechecker-token
-codechecker-token
-7xRS0lcg7AxLbEgCzyfWI8Un0IJPsq5Z8qV9tZ7g8SBI2VxNlYCTSz2c3Mt3
+
+
 
 
