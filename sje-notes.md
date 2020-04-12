@@ -41,3 +41,7 @@ to
 source(file.path(cm_path, "R", "covidm.R"))
 ```
 
+## Mapping of figures to paper
+
+NB: Table 1 and Table 3 of the preprint from April 1 are missing (presumably deleted?).
+
