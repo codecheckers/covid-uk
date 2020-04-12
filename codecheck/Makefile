@@ -17,10 +17,10 @@ davies2020-codecheck.html: davies2020-codecheck.Rmd ../codecheck.yml
 .PHONY: run clean
 
 clean:
-	rm -fr ../Figures davies2020-codecheck.html outputs
+	rm -fr davies-codecheck.pdf outputs
 
-## This takes just a minute or so to re-run outputs
+## This takes just a minute or so to re-make the pdf outputs
 
 run:
-	cd ..; Rscript -e 'rmarkdown::render("Analyze_Results.Rmd")'
+	cd ..; Rscript UK-view.R
 
