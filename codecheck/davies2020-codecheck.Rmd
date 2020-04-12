@@ -152,23 +152,23 @@ print(xt,
 
 # Summary
 
-The reproduction of the figures in the manuscript was straightforward
-given that the authors provided a Rmarkdown document that processed
-the results data files.  The results data files were not independently
-reproduced at this stage because of the long compute time.
-
+I was able to reproduce the figures and tables in the paper.  The
+simulations took several days to run, and so in the codechecker repo I
+have included the results of the simulations (the `*.qs` files).  The
+figures however are not included in the main section of the repo, but
+are in the `codecheck/outputs` folder.
 
 
 \clearpage
 
 # CODECHECKER notes
 
+The github repo <https://github.com/cmmid/covid-uk> contained all the
+necessary code.  I needed some
+system installations and R packages, but then was able to run the code.
 
-### Data and Code
 
-
-### Extra software installations
-
+## Extra software installations
 
 Several extra linux and R packages were required.  These are
 documented in the file `install.R`, shown here:
@@ -176,9 +176,11 @@ documented in the file `install.R`, shown here:
 ```{r, code = readLines("../install.R"), eval=FALSE}
 ```
 
+I ran this on arch linux, but a Dockerfile is also available.
 
 
-### Running the software to regenerate outputs.
+
+## Running the software to regenerate outputs.
 
 The only significant change to the two scripts was to ensure covid
 path was the current directory WITH a trailing slash.
@@ -193,16 +195,20 @@ I created a script to run the jobs in parallel on a cluster, `run-jobs.sh`.
 ```{bash, code = readLines("../run-jobs.sh"), eval=FALSE}
 ```
 
+The `*.stdout` files capture the output from each run; for each run,
+there are two output files, e.g. for run 1: `1-dynamics.qs` and
+`1-totals.qs`.  These `*.qs` files are then processed by the script
+`UK-view.R` to make the output figures.
+
+```{bash, eval=FALSE}
+Rscript UK-view.R
+```
+
 \setcounter{table}{0}
 \setcounter{figure}{0}
 \captionsetup[table]{labelformat=addC}
 \captionsetup[figure]{labelformat=addC}
 
-
-The `*.stdout` files capture the output from each run; for each run,
-there are two output files, e.g. for run 1: `1-dynamics.qs` and
-`1-totals.qs`.  These `*.qs` files are then processed by the script
-`UK-view.R` to make the output figures.
 
 \clearpage
 ```{r echo=FALSE, fig.cap=outputs[1, "comments"]}
@@ -256,6 +262,42 @@ print(xtable(lockdown,
       comment=FALSE)
 ```
 
+\clearpage
+
+```{r, echo=FALSE, results='asis'}
+print(xtable(read.csv(dest_files[7]),
+             caption=outputs[7, "comments"]),
+      size="\\fontsize{6pt}{7pt}\\selectfont",
+      floating = TRUE, floating.environment = "sidewaystable",
+      include.rownames=FALSE,
+      include.colnames=TRUE,
+      sanitize.text.function = function(x){x},
+      comment=FALSE)
+```
+
+\clearpage
+```{r, echo=FALSE, results='asis'}
+print(xtable(read.csv(dest_files[8]),
+             caption=outputs[8, "comments"]),
+      size="\\fontsize{6pt}{7pt}\\selectfont",
+      ##floating = TRUE, floating.environment = "sidewaystable",
+      include.rownames=FALSE,
+      include.colnames=TRUE,
+      sanitize.text.function = function(x){x},
+      comment=FALSE)
+```
+
+\clearpage
+```{r, echo=FALSE, results='asis'}
+print(xtable(read.csv(dest_files[9]),
+             caption=outputs[9, "comments"]),
+      size="\\fontsize{6pt}{7pt}\\selectfont",
+      ##floating = TRUE, floating.environment = "sidewaystable",
+      include.rownames=FALSE,
+      include.colnames=TRUE,
+      sanitize.text.function = function(x){x},
+      comment=FALSE)
+```
 
 
 
