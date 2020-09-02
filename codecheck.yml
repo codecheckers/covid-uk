@@ -35,7 +35,7 @@ manifest:
 
 codechecker:
   - name: Stephen J. Eglen
-    ORCID: https://orcid.org/0000-0001-8607-8025
+    ORCID: 0000-0001-8607-8025
 summary:  Analysis steps took several days; otherwise mostly straightforward.
 repository: <https://github.com/codecheckers/covid-uk>
 check_time: "2020-04-09 09:40:00"
