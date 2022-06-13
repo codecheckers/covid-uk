@@ -37,7 +37,7 @@ codechecker:
   - name: Stephen J. Eglen
     ORCID: 0000-0001-8607-8025
 summary:  Analysis steps took several days; otherwise mostly straightforward.
-repository: <https://github.com/codecheckers/covid-uk>
+repository: https://github.com/codecheckers/covid-uk
 check_time: "2020-04-09 09:40:00"
 certificate: 2020-008
 report: http://doi.org/10.5281/zenodo.3746024
