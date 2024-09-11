@@ -11,7 +11,7 @@ paper:
     - name: Amy Gimma
     - name: CMMID COVID-19 working group
     - name: W. John Edmunds
-  reference: <https://cmmid.github.io/topics/covid19/control-measures/report/uk_scenario_modelling_preprint_2020_04_01.pdf>
+  reference: https://cmmid.github.io/topics/covid19/control-measures/report/uk_scenario_modelling_preprint_2020_04_01.pdf
 
 manifest:
   - file: fig-12week.pdf
